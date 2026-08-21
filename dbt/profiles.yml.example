@@ -1,0 +1,12 @@
+# profiles.yml.example
+dbt:
+  outputs:
+    dev:
+      database: awsdatacatalog
+      region_name: <your-region>
+      s3_data_dir: 's3://<your-bucket>/warehouse/'
+      s3_staging_dir: 's3://<your-staging-bucket>/athena-staging/'
+      schema: tiki_dwh
+      threads: 4
+      type: athena
+  target: dev
