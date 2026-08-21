@@ -31,7 +31,7 @@ DEFAULT_NUMBER_PAGES = 10
 #AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 #AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_DEFAULT_REGION = os.getenv('AWS_DEFAULT_REGION')
-S3_BUCKET = os.getenv('S3_BUCKET')
+S3_BUCKET = "tiki-data-bucket"
 TIKI_BASE_URL = "https://api.tiki.vn/v2/products?"
 
 
@@ -89,7 +89,7 @@ def save_to_s3(data, category_id, run_date):
 
     # S3 doesn't recognize python obj
     # convert data to str
-    json_string = json.dumps(data, indent=2)
+    json_string = "\n".join(json.dumps(record) for record in data)
 
     s3_client = boto3.client('s3', region_name=AWS_DEFAULT_REGION)
     s3_key = f"bronze/tiki/{run_date}/{category_id}.json"

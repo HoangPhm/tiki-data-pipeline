@@ -10,8 +10,8 @@ import pendulum
 
 project_root = "/opt/airflow/project"
 SLACK_WEBHOOK_URL = os.getenv('SLACK_WEBHOOK_URL')
-S3_BUCKET = os.getenv('S3_BUCKET')
-DEFAULT_CATEGORY_ID = 316
+S3_BUCKET = 'tiki-data-bucket'
+DEFAULT_CATEGORY_ID = 8322
 
 def alert_on_failure(context):
     task_id = context['task_instance'].task_id
