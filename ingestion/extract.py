@@ -9,7 +9,7 @@ import argparse
 from datetime import datetime 
 from dotenv import load_dotenv
 from botocore.exceptions import ClientError
-from tenacity import retry, stop_after_attempt, retry_if_exception_type
+from tenacity import retry, stop_after_attempt, retry_if_exception_type, wait_exponential
 
 load_dotenv()
 
