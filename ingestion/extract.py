@@ -24,7 +24,7 @@ else:
 
 
 # tiki book category id
-DEFAULT_CATEGORY_ID = 316
+DEFAULT_CATEGORY_ID = 8322
 # default number of pages 
 DEFAULT_NUMBER_PAGES = 10
 
